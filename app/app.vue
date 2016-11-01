@@ -24,8 +24,8 @@
   </div>
   <button class="btn" @click="updatePart('eyes', 1)"><span class="fa fa-angle-right"></span></button>
 </div>
-<form>
-      <input type="type" placeholder="NAME YOUR CREATION" name="name">
+<form @submit.prevent="saveMonster">
+      <input type="type" placeholder="NAME YOUR CREATION" name="name" v-model="selected.name">
       <button class="btn-save__favorite">Save Favorite</button>
       </form>
 </div>
@@ -39,29 +39,13 @@
   </div>
 
   <div class="favorite-list">
-      <div class="favorite-list__item">
+      <div class="favorite-list__item" v-for="monster in monsters">
         <div class="monster">
-          <img class="monster__img" :src="'/monsters/' + monsterParts.body[selected.body] + '.full.png'" alt="" />
-          <img class="monster__img" :src="'/monsters/' + monsterParts.eyes[selected.eyes] + '.full.png'" alt="" />
-          <img class="monster__img" :src="'/monsters/' + monsterParts.mouth[selected.mouth] + '.full.png'" alt="" />
+          <img class="monster__img" :src="'/monsters/' + monsterParts.body[monster.body] + '.full.png'" alt="" />
+          <img class="monster__img" :src="'/monsters/' + monsterParts.eyes[monster.eyes] + '.full.png'" alt="" />
+          <img class="monster__img" :src="'/monsters/' + monsterParts.mouth[monster.mouth] + '.full.png'" alt="" />
         </div>
-        <h2>Halloween</h2>
-      </div>
-      <div class="favorite-list__item">
-        <div class="monster">
-          <img class="monster__img" :src="'/monsters/' + monsterParts.body[selected.body] + '.full.png'" alt="" />
-          <img class="monster__img" :src="'/monsters/' + monsterParts.eyes[selected.eyes] + '.full.png'" alt="" />
-          <img class="monster__img" :src="'/monsters/' + monsterParts.mouth[selected.mouth] + '.full.png'" alt="" />
-        </div>
-        <h2>Halloween</h2>
-      </div>
-      <div class="favorite-list__item">
-        <div class="monster">
-          <img class="monster__img" :src="'/monsters/' + monsterParts.body[selected.body] + '.full.png'" alt="" />
-          <img class="monster__img" :src="'/monsters/' + monsterParts.eyes[selected.eyes] + '.full.png'" alt="" />
-          <img class="monster__img" :src="'/monsters/' + monsterParts.mouth[selected.mouth] + '.full.png'" alt="" />
-        </div>
-        <h2>Halloween</h2>
+        <h2>{{ monster.name }}</h2>
       </div>
   </div>
 
@@ -84,20 +68,39 @@ export default Vue.extend({
         body: 0,
         eyes: 0,
         mouth: 0,
+        name: '',
       },
       monsterParts,
+
+      monsters: [],
     };
   },
 
-  mounted() {
-
+  created() {
+    fetch('http://tiny-tn.herokuapp.com/collections/swm-monsters')
+      .then((r) => r.json())
+      .then((monsters) => {
+        this.monsters = monsters;
+      });
   },
 
   methods: {
     updatePart(partName, difference = 1) {
-      this.selected[partName] = (this.selected[partName] + difference) % this.monsterParts[partName].length;
-    }
-  }
+      this.selected[partName] = (this.selected[partName] + difference + this.monsterParts[partName].length) % this.monsterParts[partName].length;
+    },
+    saveMonster(monsters) {
+      fetch('http://tiny-tn.herokuapp.com/collections/swm-monsters', {
+         method: 'POST',
+         headers: {
+           'Content-Type' : 'application/json'
+         },
+         body: JSON.stringify(this.selected),
+      }).then((r) => r.json())
+      .then((data) => {
+        this.monsters = [data, ...this.monsters];
+      })
+    },
+  },
 
 });
 </script>
