@@ -12,4 +12,29 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
   display: flex;
   height: 100vh;
   overflow: none;
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+
+    flex-grow: 1;
+  }
+}
+
+.frame {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.favorite-list {
+  display: flex;
+  flex-shrink: 0;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    flex-grow: 1;
+    text-align: center;
+  }
 }

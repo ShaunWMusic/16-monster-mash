@@ -29,30 +29,39 @@
       <button class="btn-save__favorite">Save Favorite</button>
       </form>
 </div>
-<div class="main">
+<div class="app__main">
   <div class="frame">
     <div class="monster">
-      <img class="" :src="'/monsters/' + monsterParts.body[selected.body] + '.full.png'" alt="" />
+      <img class="monster__img" :src="'/monsters/' + monsterParts.body[selected.body] + '.full.png'" alt="" />
       <img class="monster__img" :src="'/monsters/' + monsterParts.eyes[selected.eyes] + '.full.png'" alt="" />
       <img class="monster__img" :src="'/monsters/' + monsterParts.mouth[selected.mouth] + '.full.png'" alt="" />
     </div>
   </div>
 
   <div class="favorite-list">
-      <div class="favorite-list__img">
-        <img class="" :src="'/monsters/' + monsterParts.body[selected.body] + '.png'" alt="" />
-        <img class="favorite-list__img--item" :src="'/monsters/' + monsterParts.eyes[selected.eyes] + '.png'" alt="" />
-        <img class="favorite-list__img--item" :src="'/monsters/' + monsterParts.mouth[selected.mouth] + '.png'" alt="" />
+      <div class="favorite-list__item">
+        <div class="monster">
+          <img class="monster__img" :src="'/monsters/' + monsterParts.body[selected.body] + '.full.png'" alt="" />
+          <img class="monster__img" :src="'/monsters/' + monsterParts.eyes[selected.eyes] + '.full.png'" alt="" />
+          <img class="monster__img" :src="'/monsters/' + monsterParts.mouth[selected.mouth] + '.full.png'" alt="" />
+        </div>
+        <h2>Halloween</h2>
       </div>
-      <div class="favorite-list__img">
-        <img class="" :src="'/monsters/' + monsterParts.body[selected.body] + '.png'" alt="" />
-        <img class="favorite-list__img--item" :src="'/monsters/' + monsterParts.eyes[selected.eyes] + '.png'" alt="" />
-        <img class="favorite-list__img--item" :src="'/monsters/' + monsterParts.mouth[selected.mouth] + '.png'" alt="" />
+      <div class="favorite-list__item">
+        <div class="monster">
+          <img class="monster__img" :src="'/monsters/' + monsterParts.body[selected.body] + '.full.png'" alt="" />
+          <img class="monster__img" :src="'/monsters/' + monsterParts.eyes[selected.eyes] + '.full.png'" alt="" />
+          <img class="monster__img" :src="'/monsters/' + monsterParts.mouth[selected.mouth] + '.full.png'" alt="" />
+        </div>
+        <h2>Halloween</h2>
       </div>
-      <div class="favorite-list__img">
-        <img class="" :src="'/monsters/' + monsterParts.body[selected.body] + '.png'" alt="" />
-        <img class="favorite-list__img--item" :src="'/monsters/' + monsterParts.eyes[selected.eyes] + '.png'" alt="" />
-        <img class="favorite-list__img--item" :src="'/monsters/' + monsterParts.mouth[selected.mouth] + '.png'" alt="" />
+      <div class="favorite-list__item">
+        <div class="monster">
+          <img class="monster__img" :src="'/monsters/' + monsterParts.body[selected.body] + '.full.png'" alt="" />
+          <img class="monster__img" :src="'/monsters/' + monsterParts.eyes[selected.eyes] + '.full.png'" alt="" />
+          <img class="monster__img" :src="'/monsters/' + monsterParts.mouth[selected.mouth] + '.full.png'" alt="" />
+        </div>
+        <h2>Halloween</h2>
       </div>
   </div>
 
