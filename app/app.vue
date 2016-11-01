@@ -46,6 +46,7 @@
           <img class="monster__img" :src="'/monsters/' + monsterParts.mouth[monster.mouth] + '.full.png'" alt="" />
         </div>
         <h2>{{ monster.name }}</h2>
+        <button class="btn" @click="removeMonster(monster)">Delete</button>
       </div>
   </div>
 
@@ -100,6 +101,15 @@ export default Vue.extend({
         this.monsters = [data, ...this.monsters];
       })
     },
+
+    removeMonster(monster) {
+      fetch(`http://tiny-tn.herokuapp.com/collections/swm-monsters/${monster._id}`, {
+         method: 'DELETE',
+      }).then(() => {
+        // Removes the monster we are deleting from the array
+        this.monsters = this.monsters.filter((oldMonster) => oldMonster !== monster);
+      })
+    }
   },
 
 });
