@@ -4,24 +4,24 @@
   <div class="sidebar-header">
     <h1>Build Your Monster</h1>
   </div>
-  <div class="body-img-switcher img-switcher">
+  <div class="body-img-switcher sidebar__img-switcher">
   <button class="btn" @click="updatePart('body', -1)"><span class="fa fa-angle-left"></span></button>
-  <div class="frame">
-    <img :src="'/monsters/' + monsterParts.body[selected.body] + '.png'" alt="" />
+  <div class="sidebar__frame">
+    <img class="sidebar__img" :src="'/monsters/' + monsterParts.body[selected.body] + '.png'" alt="" />
   </div>
   <button class="btn" @click="updatePart('body', 1)"><span class="fa fa-angle-right"></span></button>
 </div>
-  <div class="mouth-img-switcher img-switcher">
+  <div class="mouth-img-switcher sidebar__img-switcher">
   <button class="btn" @click="updatePart('mouth', -1)"><span class="fa fa-angle-left"></span></button>
-  <div class="frame">
-    <img :src="'/monsters/' + monsterParts.mouth[selected.mouth] + '.png'" alt="" />
+  <div class="sidebar__frame">
+    <img class="sidebar__img" :src="'/monsters/' + monsterParts.mouth[selected.mouth] + '.png'" alt="" />
   </div>
   <button class="btn" @click="updatePart('mouth', 1)"><span class="fa fa-angle-right"></span></button>
 </div>
-  <div class="eyes-img-switcher img-switcher">
+  <div class="eyes-img-switcher sidebar__img-switcher">
   <button class="btn" @click="updatePart('eyes', -1)"><span class="fa fa-angle-left"></span></button>
-  <div class="frame">
-    <img :src="'/monsters/' + monsterParts.eyes[selected.eyes] + '.png'" alt="" />
+  <div class="sidebar__frame">
+    <img class="sidebar__img" :src="'/monsters/' + monsterParts.eyes[selected.eyes] + '.png'" alt="" />
   </div>
   <button class="btn" @click="updatePart('eyes', 1)"><span class="fa fa-angle-right"></span></button>
 </div>

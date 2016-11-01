@@ -4,6 +4,21 @@
   background: black;
   color: white;
 }
+
+&__frame {
+  position: relative;
+  flex-grow: 1;
+}
+ &__img {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
+  object-fit: contain;
+}
 }
 
 .btn {
@@ -15,10 +30,4 @@
   display: flex;
   background: rgba(55, 65, 64, 1.0);
 
-
-  img {
-    width: 100%;
-    height: 22rem;
-    object-fit: contain;
-  }
 }
