@@ -1,9 +1,8 @@
 <template lang="html">
 <div class="app">
 <div class="sidebar">
-  <div class="sidebar-header">
-    <h1>Build Your Monster</h1>
-  </div>
+    <h1 class="sidebar-header">Build Your Monster</h1>
+
   <div class="sidebar__img-switcher">
   <button class="btn" @click="updatePart('body', -1)"><span class="fa fa-angle-left"></span></button>
   <div class="sidebar__frame">
@@ -31,16 +30,24 @@
       </form>
 </div>
 <div class="main">
-<div class="grid">
-  <div class="grid-item">
+  <div class="frame">
     <div class="monster">
-      <img :src="'/monsters/' + monsterParts.body[selected.body] + '.full.png'" alt="" />
-      <img :src="'/monsters/' + monsterParts.eyes[selected.eyes] + '.full.png'" alt="" />
-      <img :src="'/monsters/' + monsterParts.mouth[selected.mouth] + '.full.png'" alt="" />
+      <img class="" :src="'/monsters/' + monsterParts.body[selected.body] + '.full.png'" alt="" />
+      <img class="monster__img" :src="'/monsters/' + monsterParts.eyes[selected.eyes] + '.full.png'" alt="" />
+      <img class="monster__img" :src="'/monsters/' + monsterParts.mouth[selected.mouth] + '.full.png'" alt="" />
     </div>
   </div>
+  <!-- <div class="favorite-list">
+    <div class="favorite-list__monster">
+      <div class="sidebar__frame">
+        <img class="sidebar__img" :src="'/monsters/' + monsterParts.body[selected.body] + '.full.png'" alt="" />
+        <img class="sidebar__img" :src="'/monsters/' + monsterParts.eyes[selected.eyes] + '.full.png'" alt="" />
+        <img class="sidebar__img" :src="'/monsters/' + monsterParts.mouth[selected.mouth] + '.full.png'" alt="" />
+      </div>
+    </div>
+  </div> -->
 </div>
-</div>
+
 
 
 
@@ -73,5 +80,5 @@ export default Vue.extend({
     }
   }
 
-})
+});
 </script>
