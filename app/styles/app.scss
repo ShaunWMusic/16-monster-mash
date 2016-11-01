@@ -10,4 +10,6 @@ $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 
 .app {
   display: flex;
+  height: 100vh;
+  overflow: none;
 }

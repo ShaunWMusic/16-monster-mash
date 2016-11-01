@@ -1,11 +1,15 @@
 body {
   font-family: 'Creepster', cursive;
+  background: rgba(55, 65, 64, 1.0);
 }
 
 * {
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+}
 // Simple Spacing
 body,
 figure,
@@ -56,47 +60,4 @@ input {
   border: 0;
   outline: none;
   font-family: 'Creepster', cursive;
-}
-
-// Simple Utilities
-.left {
-  text-align: left;
-}
-
-.right {
-  text-align: right;
-}
-
-.center {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hidden {
-  display: none;
-}
-
-
-// Simple Container
-$breakpoint-small: 30em; // 480px
-$breakpoint-medium: 45em; // 720px
-$breakpoint-large: 60em; // 960px
-
-.container {
-  margin-left: auto;
-  margin-right: auto;
-
-  @media only screen and (min-width: $breakpoint-small) {
-    width: 100%;
-    max-width: 30em;
-  }
-  @media only screen and (min-width: $breakpoint-medium) {
-    width: 100%;
-    max-width: 45em;
-  }
-  @media only screen and (min-width: $breakpoint-large) {
-    width: 100%;
-    max-width: 60em;
-  }
 }

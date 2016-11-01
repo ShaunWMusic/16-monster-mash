@@ -1,5 +1,7 @@
 .sidebar {
-  flex-basis: calc(100% * 1 / 4 - 1rem);
+  display: flex;
+  flex-direction: column;
+  // flex-basis: calc(100% * 1 / 4 - 1rem);
   &-header {
   background: black;
   color: white;
@@ -19,15 +21,13 @@
   height: calc(100% - 2rem);
   object-fit: contain;
 }
+&__img-switcher {
+  display: flex;
+  flex-grow: 1;
+
+}
 }
 
 .btn {
   background: rgba(222, 120, 61, 1.0);
-}
-
-
-.img-switcher {
-  display: flex;
-  background: rgba(55, 65, 64, 1.0);
-
 }
