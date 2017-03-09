@@ -1,0 +1,55 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  border-right: 0.1rem black solid;
+
+  &-header {
+  background: black;
+  color: rgba(222, 120, 61, 1.0);
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+&__frame {
+  position: relative;
+  flex-grow: 1;
+}
+ &__img {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
+  object-fit: contain;
+}
+&__img-switcher {
+  display: flex;
+  flex-grow: 1;
+  border-bottom: 0.1rem black solid;
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+
+}
+}
+
+.btn {
+  background: rgba(222, 120, 61, 1.0);
+}
+
+.btn-save__favorite {
+  width: 100%;
+  padding: 0.5rem;
+  color: rgba(222, 120, 61, 1.0);
+  background: #000;
+  font-size: 1.2rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+}
